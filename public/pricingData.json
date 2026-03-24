@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Basic",
+    "price": 999,
+    "duration": "month",
+    "description": "Perfect for beginners starting their fitness journey.",
+    "features": [
+      "Access to gym equipment",
+      "Locker facility",
+      "Standard gym hours",
+      "1 personal training session",
+      "Free fitness assessment",
+      "Access to mobile app",
+      "Basic workout guidance"
+    ],
+    "popular": false
+  },
+  {
+    "id": 2,
+    "name": "Standard",
+    "price": 1999,
+    "duration": "month",
+    "description": "Ideal for regular workouts and balanced fitness.",
+    "features": [
+      "All Basic features",
+      "Unlimited gym access",
+      "Group classes (Yoga, Zumba, HIIT)",
+      "5 personal training sessions",
+      "Diet consultation",
+      "Progress tracking",
+      "Priority support",
+      "Access to premium equipment"
+    ],
+    "popular": true
+  },
+  {
+    "id": 3,
+    "name": "Premium",
+    "price": 2999,
+    "duration": "month",
+    "description": "Best for advanced training and full transformation.",
+    "features": [
+      "All Standard features",
+      "Unlimited personal training",
+      "Custom workout & diet plan",
+      "Dedicated personal trainer",
+      "Steam & sauna access",
+      "24/7 gym access",
+      "Injury prevention guidance",
+      "Exclusive fitness workshops",
+      "Supplement consultation"
+    ],
+    "popular": false
+  }
+]
