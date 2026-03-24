@@ -22,6 +22,7 @@
     "price": 1999,
     "duration": "month",
     "description": "Ideal for regular workouts and balanced fitness.",
+    "popularity": true,
     "features": [
       "All Basic features",
       "Unlimited gym access",
