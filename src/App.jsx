@@ -6,7 +6,7 @@ import PricingOptions from './Components/PricingOptions/PricingOptions'
 
 function App() {
 
-  const pricingPromise = fetch('pricingData.json').then(res=> res.json())
+  const pricingPromise = fetch('pricingData.json').then(res => res.json())
 
 
   return (
@@ -17,7 +17,7 @@ function App() {
       </header>
 
       <main>
-        <Suspense>
+        <Suspense fallback={<span className="loading loading-spinner loading-lg"></span>}>
           <PricingOptions pricingPromise={pricingPromise}></PricingOptions>
         </Suspense>
       </main>
