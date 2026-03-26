@@ -1,5 +1,5 @@
 import React from 'react';
-import { Legend, Line, LineChart, XAxis, YAxis } from 'recharts';
+import { Bar, BarChart, CartesianGrid, Legend, Line, LineChart, Pie, PieChart, Tooltip, XAxis, YAxis } from 'recharts';
 
 
 const resultData = [
@@ -15,16 +15,63 @@ const resultData = [
     { "id": 10, "name": "Diya", "physics": 68, "chemistry": 72, "math": 70 }
 ];
 
+const businessData = [
+    { "name": "Restaurants", "value": 25 },
+    { "name": "Grocery Stores", "value": 15 },
+    { "name": "Clothing Shops", "value": 20 },
+    { "name": "Electronics", "value": 18 },
+    { "name": "Pharmacies", "value": 12 },
+    { "name": "Gyms & Fitness", "value": 10 }
+];
+
 const ResultsChart = () => {
     return (
         <div>
             <LineChart width={800} height={500} data={resultData}>
-                <Line dataKey={'physics'}></Line>
+                <Line dataKey={'physics'} ></Line>
                 <Line dataKey={'chemistry'} stroke='red'></Line>
                 <XAxis dataKey="name"></XAxis>
                 <YAxis></YAxis>
                 <Legend></Legend>
+                <Tooltip></Tooltip>
             </LineChart>
+
+            <BarChart style={{ width: '1000px', height: '500px' }} data={resultData}>
+                <CartesianGrid strokeDasharray={"3 3"}></CartesianGrid>
+
+                <XAxis dataKey={'name'}></XAxis>
+                <YAxis></YAxis>
+                <Tooltip></Tooltip>
+                <Legend></Legend>
+                <Bar dataKey={'physics'} fill='orange'></Bar>
+                <Bar dataKey={'chemistry'} fill='green'></Bar>
+                <Bar dataKey={'math'} fill='blue'></Bar>
+
+            </BarChart>
+
+            <div className='flex'>
+                <PieChart height={500} width={500}>
+                    <Pie data={businessData} dataKey={"value"} cx="50%" cy={"50%"} label>
+                    </Pie>
+                    <Tooltip></Tooltip>
+                    <Legend></Legend>
+
+                </PieChart>
+                <PieChart width={500} height={500}>
+                    <Pie
+                        data={businessData}
+                        dataKey="value"
+                        nameKey="name"
+                        cx="50%"
+                        cy="50%"
+                        outerRadius={150}
+                        fill="#8884d8"
+                        label
+                    />
+                    <Tooltip />
+                    <Legend />
+                </PieChart>
+            </div>
 
         </div>
     );
