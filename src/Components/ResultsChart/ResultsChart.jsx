@@ -1,18 +1,18 @@
 import React from 'react';
-import { Bar, BarChart, CartesianGrid, Legend, Line, LineChart, Pie, PieChart, Tooltip, XAxis, YAxis } from 'recharts';
+import { Area, AreaChart, Bar, BarChart, CartesianGrid, Legend, Line, LineChart, Pie, PieChart, Tooltip, XAxis, YAxis } from 'recharts';
 
 
 const resultData = [
-    { "id": 1, "name": "Aarav", "physics": 78, "chemistry": 82, "math": 90 },
-    { "id": 2, "name": "Ishita", "physics": 65, "chemistry": 70, "math": 68 },
-    { "id": 3, "name": "Rohan", "physics": 88, "chemistry": 91, "math": 95 },
-    { "id": 4, "name": "Meera", "physics": 72, "chemistry": 75, "math": 80 },
-    { "id": 5, "name": "Arjun", "physics": 60, "chemistry": 66, "math": 62 },
-    { "id": 6, "name": "Sneha", "physics": 85, "chemistry": 89, "math": 92 },
-    { "id": 7, "name": "Kabir", "physics": 55, "chemistry": 58, "math": 61 },
-    { "id": 8, "name": "Ananya", "physics": 91, "chemistry": 87, "math": 93 },
-    { "id": 9, "name": "Rahul", "physics": 74, "chemistry": 79, "math": 77 },
-    { "id": 10, "name": "Diya", "physics": 68, "chemistry": 72, "math": 70 }
+    { "id": 1, "name": "Aarav", "physics": 28, "chemistry": 52, "math": 90 },
+    { "id": 2, "name": "Ishita", "physics": 25, "chemistry": 50, "math": 68 },
+    { "id": 3, "name": "Rohan", "physics": 28, "chemistry": 51, "math": 95 },
+    { "id": 4, "name": "Meera", "physics": 22, "chemistry": 55, "math": 80 },
+    { "id": 5, "name": "Arjun", "physics": 20, "chemistry": 56, "math": 62 },
+    { "id": 6, "name": "Sneha", "physics": 25, "chemistry": 55, "math": 92 },
+    { "id": 7, "name": "Kabir", "physics": 25, "chemistry": 58, "math": 61 },
+    { "id": 8, "name": "Ananya", "physics": 31, "chemistry": 67, "math": 93 },
+    { "id": 9, "name": "Rahul", "physics": 34, "chemistry": 69, "math": 77 },
+    { "id": 10, "name": "Diya", "physics": 38, "chemistry": 62, "math": 70 }
 ];
 
 const businessData = [
@@ -49,6 +49,7 @@ const ResultsChart = () => {
 
             </BarChart>
 
+            {/* PieChart */}
             <div className='flex'>
                 <PieChart height={500} width={500}>
                     <Pie data={businessData} dataKey={"value"} cx="50%" cy={"50%"} label>
@@ -72,6 +73,21 @@ const ResultsChart = () => {
                     <Legend />
                 </PieChart>
             </div>
+
+            <AreaChart
+                data={resultData}
+                height={'500px'}
+                width={'800px'} responsive>
+                <CartesianGrid strokeDasharray={"3 3"}></CartesianGrid>
+                <XAxis dataKey={'name'}></XAxis>
+                <YAxis></YAxis>
+                <Tooltip></Tooltip>
+                <Legend/>
+
+                <Area type={"monotone"} dataKey={"physics"} stackId="1" stroke='#8884d8' fill='#8884d8'></Area>
+                <Area type={"monotone"} dataKey={"chemistry"} stackId={"1"} stroke='#82ca9d' fill='#82ca9d'></Area>
+                <Area type={"monotone"} dataKey={"math"} stackId={"1"} stroke='#ffc658' fill='#ffc658'></Area>
+            </AreaChart>
 
         </div>
     );
